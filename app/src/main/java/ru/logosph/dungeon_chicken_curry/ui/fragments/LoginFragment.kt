@@ -25,12 +25,9 @@ class LoginFragment : Fragment() {
             false
         )
 
-        binding.button.setOnClickListener {
+        binding.button!!.setOnClickListener {
             findNavController().navigate(R.id.action_loginFragment_to_signupFragment)
         }
-
-        binding.loginBtn.minWidth = binding.passwordLog.width
-        binding.loginBtn.minimumWidth = binding.passwordLog.width
 
         return binding.root
     }

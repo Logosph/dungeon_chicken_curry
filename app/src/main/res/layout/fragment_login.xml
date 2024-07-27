@@ -7,7 +7,7 @@
     tools:context=".ui.fragments.LoginFragment">
 
     <ImageView
-        android:id="@+id/lable_log"
+        android:id="@+id/label"
         android:layout_width="156dp"
         android:layout_height="156dp"
         android:backgroundTint="@color/md_theme_primary"
@@ -18,18 +18,17 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginBottom="190dp"
+        android:layout_height="wrap_content"
         android:background="@drawable/frame_log"
         android:padding="64dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/lable_log">
+        app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/login_log"
-            android:layout_width="272dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:hint="Login"
             app:counterEnabled="true"
@@ -50,9 +49,8 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/password_log"
-            android:layout_width="272dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
             android:hint="Password"
             app:layout_constraintBottom_toTopOf="@id/login_btn"
             app:layout_constraintEnd_toEndOf="parent"
@@ -82,11 +80,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="12sp"
-
             android:text="@string/don_t_have_an_account_yet"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/login_btn"
-            android:layout_marginBottom="32dp"
+            android:layout_marginTop="8dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
 
