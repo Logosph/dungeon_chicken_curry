@@ -58,7 +58,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/profile_name"
-            android:orientation="horizontal"/>
+            android:orientation="horizontal"
+            tools:listitem="@layout/item_character"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import ru.logosph.dungeon_chicken_curry.databinding.FragmentProfileBinding
 
 class ProfileFragment : Fragment() {
@@ -17,6 +18,10 @@ class ProfileFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentProfileBinding.inflate(inflater, container, false)
+
+        binding.topAppBar.setNavigationOnClickListener {
+            findNavController().popBackStack()
+        }
 
         return binding.root
     }

@@ -3,4 +3,6 @@
     <string name="don_t_have_an_account_yet"><u>Don\'t have an account yet?</u></string>
     <string name="already_have_an_account"><u>Already have an account?</u></string>
     <string name="edit_profile">Edit profile</string>
+    <string name="profile">Profile</string>
+    <string name="search_for_a_game">Search for a game</string>
 </resources>
