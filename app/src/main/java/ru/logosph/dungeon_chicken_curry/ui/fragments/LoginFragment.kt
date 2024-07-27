@@ -29,6 +29,9 @@ class LoginFragment : Fragment() {
             findNavController().navigate(R.id.action_loginFragment_to_signupFragment)
         }
 
+        binding.loginBtn.minWidth = binding.passwordLog.width
+        binding.loginBtn.minimumWidth = binding.passwordLog.width
+
         return binding.root
     }
 }

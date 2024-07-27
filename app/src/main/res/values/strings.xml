@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">pchk_with_yulia</string>
+    <string name="don_t_have_an_account_yet"><u>Don\'t have an account yet?</u></string>
 </resources>
