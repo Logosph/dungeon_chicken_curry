@@ -30,6 +30,10 @@ class MainFragment : Fragment() {
             }
         }
 
+        binding.fabAddGame.setOnClickListener {
+            findNavController().navigate(R.id.action_mainFragment_to_createRoom1Fragment)
+        }
+
         return binding.root
     }
 

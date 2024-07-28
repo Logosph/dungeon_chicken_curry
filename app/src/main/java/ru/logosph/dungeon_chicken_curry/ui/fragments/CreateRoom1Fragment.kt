@@ -5,6 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
+import ru.logosph.dungeon_chicken_curry.R
 import ru.logosph.dungeon_chicken_curry.databinding.FragmentCreateRoom1Binding
 
 class CreateRoom1Fragment : Fragment() {
@@ -22,7 +24,15 @@ class CreateRoom1Fragment : Fragment() {
             container,
             false
         )
-        
+
+        binding.nextStage.setOnClickListener {
+            findNavController().navigate(R.id.action_createRoom1Fragment_to_createRoom2Fragment)
+        }
+
+        binding.topAppBar.setNavigationOnClickListener {
+            findNavController().popBackStack()
+        }
+
         return binding.root
     }
 }
