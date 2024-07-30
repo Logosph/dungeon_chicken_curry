@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import ru.logosph.dungeon_chicken_curry.R
 import ru.logosph.dungeon_chicken_curry.databinding.FragmentCreateRoom1Binding
+import ru.logosph.dungeon_chicken_curry.ui.dialogs.ChoiseListDialogFragment
 
 class CreateRoom1Fragment : Fragment() {
     
@@ -24,6 +25,10 @@ class CreateRoom1Fragment : Fragment() {
             container,
             false
         )
+        binding.titleClasses.setOnClickListener{
+            val dialog = ChoiseListDialogFragment()
+            dialog.show(parentFragmentManager, "gavna")
+        }
 
         binding.nextStage.setOnClickListener {
             findNavController().navigate(R.id.action_createRoom1Fragment_to_createRoom2Fragment)
