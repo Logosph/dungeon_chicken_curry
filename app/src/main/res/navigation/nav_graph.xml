@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/mainFragment">
+    app:startDestination="@id/loginFragment">
 
     <fragment
         android:id="@+id/createRoom1Fragment"
@@ -21,7 +21,7 @@
         tools:layout="@layout/fragment_create_room_2" />
     <fragment
         android:id="@+id/loginFragment"
-        android:name="ru.logosph.dungeon_chicken_curry.ui.fragments.LoginFragment"
+        android:name="ru.logosph.dungeon_chicken_curry.ui.fragments.login.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
@@ -33,7 +33,7 @@
     </fragment>
     <fragment
         android:id="@+id/signupFragment"
-        android:name="ru.logosph.dungeon_chicken_curry.ui.fragments.SignupFragment"
+        android:name="ru.logosph.dungeon_chicken_curry.ui.fragments.signup.SignupFragment"
         android:label="fragment_signup"
         tools:layout="@layout/fragment_signup" >
         <action

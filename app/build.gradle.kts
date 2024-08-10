@@ -57,17 +57,8 @@ dependencies {
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
 
-    // Firebase main dependencies
-    implementation(platform("com.google.firebase:firebase-bom:33.0.0"))
-    implementation("com.google.firebase:firebase-analytics")
+    // OkHttp
+    implementation(libs.okhttp)
 
-    // Firestore (for databases)
-    implementation("com.google.firebase:firebase-firestore-ktx")
-
-    // Firebase Storage (for photos)
-    implementation("com.google.firebase:firebase-storage-ktx")
-
-    // Auth
-    implementation("com.google.firebase:firebase-auth")
 
 }
