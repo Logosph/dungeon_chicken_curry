@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/createRoom1Fragment"
-        android:name="ru.logosph.dungeon_chicken_curry.ui.fragments.CreateRoom1Fragment"
+        android:name="ru.logosph.dungeon_chicken_curry.ui.fragments.create_room_1.CreateRoom1Fragment"
         android:label="fragment_create_room_1"
         tools:layout="@layout/fragment_create_room_1" >
         <action

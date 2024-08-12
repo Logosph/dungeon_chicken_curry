@@ -22,8 +22,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
         android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
         android:gravity="center"
         app:checkedButton="@id/button1"
         app:layout_constraintEnd_toEndOf="parent"
@@ -53,22 +53,27 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:visibility="gone"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/toggleButton"
+        app:spanCount="2"
         tools:listitem="@layout/item_for_list" />
 
-    <com.google.android.material.chip.ChipGroup
-        android:id="@+id/chip_classes"
-        android:visibility="gone"
+    <ru.logosph.dungeon_chicken_curry.ui.custom.FlexableViewGroup
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
+        app:firstElementPinned="true"
+        app:lastElementPinned="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toggleButton">
+        app:layout_constraintTop_toBottomOf="@id/toggleButton">
 
         <com.google.android.material.chip.Chip
             style="@style/Widget.Material3.Chip.Input"
@@ -80,7 +85,7 @@
             style="@style/Widget.Material3.Chip.Input"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Гит" />
+            android:text="Хобгоблин" />
 
         <com.google.android.material.chip.Chip
             style="@style/Widget.Material3.Chip.Input"
@@ -124,5 +129,6 @@
             android:layout_height="wrap_content"
             android:text="Человек" />
 
-    </com.google.android.material.chip.ChipGroup>
+    </ru.logosph.dungeon_chicken_curry.ui.custom.FlexableViewGroup>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

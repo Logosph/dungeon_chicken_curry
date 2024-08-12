@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="FlexableViewGroup">
+        <attr name="spaceBetween" format="dimension"/>
+        <attr name="minSpaceBetween" format="dimension"/>
+        <attr name="firstElementPinned" format="boolean"/>
+        <attr name="lastElementPinned" format="boolean"/>
+    </declare-styleable>
+</resources>
