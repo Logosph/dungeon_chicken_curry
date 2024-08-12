@@ -4,7 +4,7 @@ import android.content.Context
 
 class LogoutUseCase {
     companion object {
-        suspend fun execute(
+        fun execute(
             repo: AuthorizationRepository,
             context: Context
         ): Boolean {

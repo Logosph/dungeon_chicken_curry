@@ -5,4 +5,5 @@
     <string name="edit_profile">Edit profile</string>
     <string name="profile">Profile</string>
     <string name="search_for_a_game">Search for a game</string>
+    <string name="log_out">Log out</string>
 </resources>
