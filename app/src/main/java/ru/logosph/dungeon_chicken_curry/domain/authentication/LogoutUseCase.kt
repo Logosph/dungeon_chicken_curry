@@ -1,4 +1,4 @@
-package ru.logosph.dungeon_chicken_curry.domain
+package ru.logosph.dungeon_chicken_curry.domain.authentication
 
 import android.content.Context
 

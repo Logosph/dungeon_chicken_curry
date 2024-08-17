@@ -5,8 +5,8 @@ import androidx.lifecycle.ViewModel
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import ru.logosph.dungeon_chicken_curry.data.user.AuthorizationRepositoryImpl
-import ru.logosph.dungeon_chicken_curry.domain.RegisterUseCase
-import ru.logosph.dungeon_chicken_curry.domain.UserModel
+import ru.logosph.dungeon_chicken_curry.domain.authentication.RegisterUseCase
+import ru.logosph.dungeon_chicken_curry.domain.authentication.UserModel
 import ru.logosph.dungeon_chicken_curry.ui.fragments.LoadingStates
 
 

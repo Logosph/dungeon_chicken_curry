@@ -3,7 +3,7 @@ package ru.logosph.dungeon_chicken_curry.ui.fragments.profile
 import android.content.Context
 import androidx.lifecycle.ViewModel
 import ru.logosph.dungeon_chicken_curry.data.user.AuthorizationRepositoryImpl
-import ru.logosph.dungeon_chicken_curry.domain.LogoutUseCase
+import ru.logosph.dungeon_chicken_curry.domain.authentication.LogoutUseCase
 
 class ProfileViewModel : ViewModel() {
 

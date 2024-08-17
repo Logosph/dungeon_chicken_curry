@@ -7,8 +7,8 @@ import okhttp3.FormBody
 import okhttp3.Headers
 import okhttp3.OkHttpClient
 import okhttp3.Request
-import ru.logosph.dungeon_chicken_curry.domain.AuthorizationRepository
-import ru.logosph.dungeon_chicken_curry.domain.UserModel
+import ru.logosph.dungeon_chicken_curry.domain.authentication.AuthorizationRepository
+import ru.logosph.dungeon_chicken_curry.domain.authentication.UserModel
 
 class AuthorizationRepositoryImpl : AuthorizationRepository {
 
