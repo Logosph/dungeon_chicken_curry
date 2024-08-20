@@ -5,13 +5,9 @@ import android.os.Bundle
 import androidx.fragment.app.DialogFragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
-import com.google.android.material.carousel.CarouselLayoutManager
-import com.google.android.material.carousel.CarouselSnapHelper
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import ru.logosph.dungeon_chicken_curry.R
 import ru.logosph.dungeon_chicken_curry.databinding.DialogChoiseListBinding
-import ru.logosph.dungeon_chicken_curry.ui.fragments.create_room_1.CreateRoom1Adapter
-import ru.logosph.dungeon_chicken_curry.ui.fragments.create_room_2.CreateRoom2Adapter
 
 class ChoiseListDialogFragment : DialogFragment() {
 
@@ -26,7 +22,7 @@ class ChoiseListDialogFragment : DialogFragment() {
 
         // TODO: Change carousel LM to Grid LM to Yulia
         with(binding) {
-            val adapter = CreateRoom1Adapter()
+            val adapter = ChoiseListDialogAdapter()
             listRecyclerView.adapter = adapter
             listRecyclerView.layoutManager = GridLayoutManager(context, 2)
 
