@@ -17,7 +17,8 @@ class ChoiseListDialogFragment : DialogFragment() {
     lateinit var binding: DialogChoiseListBinding
     lateinit var viewModel: ChooseListViewModel
     var isRace: Boolean = false
-    lateinit var onDismissListener: ((list: List<RaceAndClassModel>) -> Unit) // () -> Unit
+    var isAllowed: Boolean = false
+    lateinit var onDismissListener: ((list: Pair<Boolean, List<RaceAndClassModel>>) -> Unit) // () -> Unit
     lateinit var adapter: ChoiseListDialogAdapter
 
 
@@ -27,35 +28,36 @@ class ChoiseListDialogFragment : DialogFragment() {
         viewModel = ViewModelProvider(this)[ChooseListViewModel::class.java]
         builder.setView(binding.root)
 
-        adapter = ChoiseListDialogAdapter(viewModel = viewModel)
+        viewModel.isButtonAllowed = isAllowed
+        updateButtonAppearance(viewModel.isButtonAllowed)
+
+        if (isRace) viewModel.getRaces(requireContext()) else viewModel.getClasses(requireContext())
+
+        adapter = ChoiseListDialogAdapter()
+        adapter.onItemClickListener = { position ->
+            viewModel.toggleSelection(position)
+        }
 
         binding.allowedRestrictedButton.setOnClickListener {
             viewModel.toggleButtonState()
-            updateButtonAppearance(viewModel.buttonState.value!!)
+            updateButtonAppearance(viewModel.isButtonAllowed)
         }
-
-        viewModel.buttonState.observe(this, { state ->
-            updateButtonAppearance(state)
-        })
-
 
         with(binding) {
             listRecyclerView.adapter = adapter
             listRecyclerView.layoutManager = GridLayoutManager(context, 2)
 
             if (isRace) {
-                adapter.updateData(viewModel.getRaces(requireContext()))
+                adapter.updateData(viewModel.racesAndClasses)
             } else {
-                adapter.updateData(viewModel.getClasses(requireContext()))
+                adapter.updateData(viewModel.racesAndClasses)
             }
 
-            for (i in viewModel.getRaces(requireContext())) {
-                val chip = Chip(requireContext())
-                chip.text = i.name
-                chipsFlexViewGroup.addView(
-                    chip
-                )
-
+            for (i in viewModel.racesAndClasses) {
+                val chip = Chip(requireContext()).apply {
+                    text = i.name
+                }
+                chipsFlexViewGroup.addView(chip)
             }
 
             toggleButton.addOnButtonCheckedListener { group, checkedId, isChecked ->
@@ -79,16 +81,21 @@ class ChoiseListDialogFragment : DialogFragment() {
         return builder.create()
     }
 
+    private fun updateButtonAppearance(isButtonAllowed: Boolean) {
+        with(binding.allowedRestrictedButton) {
+            if (isButtonAllowed) {
+                text = "Allowed"
+                setTextColor(resources.getColor(R.color.allowed, null))
+            } else {
+                text = "Restricted"
+                setTextColor(resources.getColor(R.color.md_theme_error, null))
+            }
+        }
 
-    private fun updateButtonAppearance(state: ChooseListViewModel.ButtonState) {
-        binding.allowedRestrictedButton.text = state.text
-        binding.allowedRestrictedButton.setTextColor(state.color)
     }
 
     override fun onDismiss(dialog: DialogInterface) {
         super.onDismiss(dialog)
-
-        onDismissListener(emptyList())
+        onDismissListener(viewModel.isButtonAllowed to viewModel.selectedItems.toList())
     }
-
 }
