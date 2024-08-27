@@ -1,7 +1,2 @@
 Elf
 Human
-Orc
-Gnome
-Troll
-Goblin
-Hobbit

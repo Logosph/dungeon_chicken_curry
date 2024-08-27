@@ -41,7 +41,7 @@ class LocalDataRepositoryImpl : LocalDataRepository {
 
         return List(enList.size) { index ->
             {
-                val inputStream = assetManager.open("${enList[index]}.png")
+                val inputStream = assetManager.open("${enList[index].lowercase()}.png")
                 val image = BitmapFactory.decodeStream(inputStream)
                 RaceAndClassModel(
                     name = localedList[index],
